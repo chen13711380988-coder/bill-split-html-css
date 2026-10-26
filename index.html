@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="A scrapbook-style HTML and CSS layout for organizing and splitting shared bills."
+    />
+    <title>Bill Split — HTML &amp; CSS Prototype</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <header class="site-header">
+      <a class="wordmark" href="#home" aria-label="Bill Split home">Bill Split</a>
+      <nav aria-label="Main navigation">
+        <a href="#bills-list">Bills List</a>
+        <a href="#new-bill">Create a New Bill</a>
+      </nav>
+    </header>
+
+    <main>
+      <!-- HOME PAGE -->
+      <section class="site-view" id="home" aria-labelledby="home-heading">
+        <div class="notebook-viewport">
+          <div class="notebook home-notebook" aria-label="Open scrapbook notebook">
+            <img class="book-cover" src="assets/notebook/cover.png" alt="" />
+            <img class="book-paper" src="assets/notebook/paper.png" alt="" />
+            <img class="book-rings" src="assets/notebook/rings.png" alt="" />
+
+            <article class="notebook-page left-page home-page home-left">
+              <h1 id="home-heading">Split Your Bill<br />Effortlessly</h1>
+              <a class="receipt-sticker" href="#example-bill">
+                <img src="assets/bill-sticker-cutout.png" alt="A vintage restaurant receipt" />
+                <span class="receipt-caption">Open an example bill →</span>
+              </a>
+            </article>
+
+            <article class="notebook-page right-page home-page home-right">
+              <p class="home-intro">
+                Keep every shared expense in one friendly place.<br />
+                See exactly who paid, who joined, and how to settle up.
+              </p>
+              <div class="calculator-collage">
+                <img class="calculator" src="assets/calculator-sticker.png" alt="Vintage calculator" />
+                <a class="calculator-note" href="#new-bill">
+                  <span>Creating a new bill</span>
+                  <small>start here →</small>
+                </a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- BILLS LIST PAGE -->
+      <section class="site-view" id="bills-list" aria-labelledby="bills-heading">
+        <div class="notebook-viewport">
+          <div class="notebook" aria-label="Saved bill scrapbook">
+            <img class="book-cover" src="assets/notebook/cover.png" alt="" />
+            <img class="book-paper" src="assets/notebook/paper.png" alt="" />
+            <img class="book-rings" src="assets/notebook/rings.png" alt="" />
+
+            <article class="notebook-page left-page bills-page">
+              <p class="eyebrow">YOUR SCRAPBOOK</p>
+              <h1 id="bills-heading">Bills List</h1>
+              <p class="page-copy">Every bill is a small record of a shared day. Pick a sticker to open it.</p>
+
+              <div class="bill-sticker-grid">
+                <a class="saved-bill-sticker sticker-1" href="#example-bill">
+                  <span class="mini-tape" aria-hidden="true"></span>
+                  <small>SAVED BILL</small>
+                  <strong>Lisbon Weekend</strong>
+                  <span>Four friends · October 18–20</span>
+                  <span>4 people · $428.40</span>
+                  <em>Open bill →</em>
+                </a>
+
+                <a class="saved-bill-sticker sticker-2" href="#example-bill">
+                  <span class="mini-tape" aria-hidden="true"></span>
+                  <small>SAVED BILL</small>
+                  <strong>Brooklyn Brunch</strong>
+                  <span>Three friends · October 6</span>
+                  <span>3 people · $96.00</span>
+                  <em>Open bill →</em>
+                </a>
+              </div>
+            </article>
+
+            <article class="notebook-page right-page bills-page bills-page-right">
+              <a class="saved-bill-sticker sticker-3" href="#example-bill">
+                <span class="mini-tape" aria-hidden="true"></span>
+                <small>SAVED BILL</small>
+                <strong>Rockaway Beach Day</strong>
+                <span>Four friends · September 27</span>
+                <span>4 people · $44.00</span>
+                <em>Open bill →</em>
+              </a>
+
+              <a class="new-bill-sticker" href="#new-bill">
+                <span>＋</span>
+                Create a new bill
+              </a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- PREFILLED EXAMPLE BILL -->
+      <section class="site-view bill-view" id="example-bill" aria-labelledby="example-bill-title">
+        <div class="notebook-viewport">
+          <div class="notebook" aria-label="Example shared bill">
+            <img class="book-cover" src="assets/notebook/cover.png" alt="" />
+            <img class="book-paper" src="assets/notebook/paper.png" alt="" />
+            <img class="book-rings" src="assets/notebook/rings.png" alt="" />
+
+            <article class="notebook-page left-page bill-page">
+              <label class="bill-title-field">
+                <span class="visually-hidden">Bill title</span>
+                <input id="example-bill-title" class="bill-title-input" value="Lisbon Weekend" />
+              </label>
+
+              <section class="bill-section" aria-labelledby="example-group-heading">
+                <div class="section-heading-row">
+                  <h2 id="example-group-heading">Group</h2>
+                  <span>4 people</span>
+                </div>
+                <div class="add-member-form">
+                  <label class="visually-hidden" for="example-member">New group member name</label>
+                  <input id="example-member" placeholder="Type a name" />
+                  <button type="button">＋ Add</button>
+                </div>
+                <div class="group-list" aria-label="Current group members">
+                  <span class="person-tag">Maya <button type="button" aria-label="Remove Maya">×</button></span>
+                  <span class="person-tag">Qilin <button type="button" aria-label="Remove Qilin">×</button></span>
+                  <span class="person-tag">Leo <button type="button" aria-label="Remove Leo">×</button></span>
+                  <span class="person-tag">Sam <button type="button" aria-label="Remove Sam">×</button></span>
+                </div>
+              </section>
+
+              <section class="bill-section expenses-section" aria-labelledby="example-expenses-heading">
+                <div class="section-heading-row">
+                  <h2 id="example-expenses-heading">Expense</h2>
+                  <a class="round-add" href="#expense-form" aria-label="Add expense">＋</a>
+                </div>
+
+                <div class="expense-list">
+                  <article class="expense-row">
+                    <a class="expense-main" href="#expense-form">
+                      <span class="expense-primary"><strong>Alfama Dinner</strong><b>$128.40</b></span>
+                      <span class="expense-secondary">Paid by Maya · Shared with 4 people · Equal split</span>
+                    </a>
+                    <button class="delete-expense" type="button" aria-label="Delete Alfama Dinner">×</button>
+                  </article>
+
+                  <article class="expense-row">
+                    <a class="expense-main" href="#expense-form">
+                      <span class="expense-primary"><strong>Airport Taxi</strong><b>$48.00</b></span>
+                      <span class="expense-secondary">Paid by Qilin · Shared with 3 people · Equal split</span>
+                    </a>
+                    <button class="delete-expense" type="button" aria-label="Delete Airport Taxi">×</button>
+                  </article>
+
+                  <article class="expense-row">
+                    <a class="expense-main" href="#expense-form">
+                      <span class="expense-primary"><strong>Museum Tickets</strong><b>$72.00</b></span>
+                      <span class="expense-secondary">Paid by Leo · Shared with 4 people · Equal split</span>
+                    </a>
+                    <button class="delete-expense" type="button" aria-label="Delete Museum Tickets">×</button>
+                  </article>
+
+                  <article class="expense-row">
+                    <a class="expense-main" href="#expense-form">
+                      <span class="expense-primary"><strong>Hotel Deposit</strong><b>$180.00</b></span>
+                      <span class="expense-secondary">Paid by Maya + Qilin · Shared with 4 people · Custom split</span>
+                    </a>
+                    <button class="delete-expense" type="button" aria-label="Delete Hotel Deposit">×</button>
+                  </article>
+                </div>
+
+                <div class="calculate-area">
+                  <p>Total recorded: <strong>$428.40</strong></p>
+                  <button class="calculate-button" type="button" title="This button will calculate with JavaScript later">Calculate</button>
+                </div>
+              </section>
+            </article>
+
+            <article class="notebook-page right-page bill-page bill-right">
+              <section class="receipt-area" aria-labelledby="receipt-heading">
+                <label class="receipt-upload-heading" for="receipt-upload">
+                  <img src="assets/camera-sticker.png" alt="" />
+                  <span><strong id="receipt-heading">Add a photo receipt</strong><small>optional</small></span>
+                </label>
+                <input class="visually-hidden" id="receipt-upload" type="file" accept="image/*" />
+                <div class="receipt-note">
+                  <img src="assets/note-grid-cutout.png" alt="Blank taped grid-paper note" />
+                  <p>Receipt photos will appear here after JavaScript is added.</p>
+                </div>
+              </section>
+
+              <section class="payment-section" aria-labelledby="payment-heading">
+                <div class="payment-heading">
+                  <h2 id="payment-heading">How to pay?</h2>
+                  <span>$428.40 total</span>
+                </div>
+                <ul class="payment-list">
+                  <li><strong>Sam</strong><span>pays <b>$80.10</b> to Maya</span></li>
+                  <li><strong>Leo</strong><span>pays <b>$22.20</b> to Maya</span></li>
+                  <li><strong>Leo</strong><span>pays <b>$1.90</b> to Qilin</span></li>
+                </ul>
+              </section>
+
+              <a class="back-link" href="#bills-list">← Back to Bills List</a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- BLANK BILL LAYOUT -->
+      <section class="site-view bill-view" id="new-bill" aria-labelledby="new-bill-title">
+        <div class="notebook-viewport">
+          <div class="notebook" aria-label="Create a new shared bill">
+            <img class="book-cover" src="assets/notebook/cover.png" alt="" />
+            <img class="book-paper" src="assets/notebook/paper.png" alt="" />
+            <img class="book-rings" src="assets/notebook/rings.png" alt="" />
+
+            <article class="notebook-page left-page bill-page">
+              <label class="bill-title-field">
+                <span class="visually-hidden">Bill title</span>
+                <input id="new-bill-title" class="bill-title-input" placeholder="Bill Title" />
+              </label>
+
+              <section class="bill-section" aria-labelledby="new-group-heading">
+                <div class="section-heading-row"><h2 id="new-group-heading">Group</h2><span>0 people</span></div>
+                <div class="add-member-form">
+                  <label class="visually-hidden" for="new-member">New group member name</label>
+                  <input id="new-member" placeholder="Type a name" />
+                  <button type="button">＋ Add</button>
+                </div>
+                <p class="empty-copy">Add people before creating an expense.</p>
+              </section>
+
+              <section class="bill-section" aria-labelledby="new-expense-heading">
+                <div class="section-heading-row">
+                  <h2 id="new-expense-heading">Expense</h2>
+                  <a class="round-add" href="#expense-form" aria-label="Add expense">＋</a>
+                </div>
+                <a class="empty-expense" href="#expense-form">＋ Add the first expense</a>
+                <div class="calculate-area">
+                  <p>Total recorded: <strong>$0.00</strong></p>
+                  <button class="calculate-button" type="button" title="This button will calculate with JavaScript later">Calculate</button>
+                </div>
+              </section>
+            </article>
+
+            <article class="notebook-page right-page bill-page bill-right">
+              <section class="receipt-area">
+                <label class="receipt-upload-heading" for="new-receipt-upload">
+                  <img src="assets/camera-sticker.png" alt="" />
+                  <span><strong>Add a photo receipt</strong><small>optional</small></span>
+                </label>
+                <input class="visually-hidden" id="new-receipt-upload" type="file" accept="image/*" />
+                <div class="receipt-note">
+                  <img src="assets/note-grid-cutout.png" alt="Blank taped grid-paper note" />
+                  <p>Receipt photos will appear here later.</p>
+                </div>
+              </section>
+              <section class="payment-section">
+                <div class="payment-heading"><h2>How to pay?</h2><span>$0.00 total</span></div>
+                <p class="payment-empty">Finish your group and expenses, then press <strong>Calculate</strong>.</p>
+              </section>
+              <a class="back-link" href="#bills-list">← Back to Bills List</a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- CSS-ONLY EXPENSE FORM -->
+      <section class="modal-backdrop" id="expense-form" aria-labelledby="expense-title">
+        <form class="expense-modal">
+          <a class="close-modal" href="#example-bill" aria-label="Close expense form">×</a>
+
+          <div class="modal-title-row">
+            <label>
+              <span class="visually-hidden">Expense title</span>
+              <input id="expense-title" class="expense-title-input" value="Alfama Dinner" />
+            </label>
+
+            <details class="split-settings">
+              <summary><span aria-hidden="true">⚙</span> Split settings</summary>
+              <div class="settings-panel">
+                <input id="split-equal" name="split-mode" type="radio" checked />
+                <label for="split-equal">Pay equally</label>
+                <input id="split-custom" name="split-mode" type="radio" />
+                <label for="split-custom">Custom amounts</label>
+                <div class="custom-shares">
+                  <label>Maya <input type="number" value="32.10" /></label>
+                  <label>Qilin <input type="number" value="32.10" /></label>
+                  <label>Leo <input type="number" value="32.10" /></label>
+                  <label>Sam <input type="number" value="32.10" /></label>
+                </div>
+              </div>
+            </details>
+          </div>
+
+          <label class="field"><span>Total amount</span><span class="money-input">$ <input type="number" value="128.40" /></span></label>
+
+          <fieldset>
+            <legend>Payer</legend>
+            <label class="check-line"><input type="checkbox" /> More than one person paid</label>
+            <label class="visually-hidden" for="payer">Select payer</label>
+            <select id="payer"><option>Maya</option><option>Qilin</option><option>Leo</option><option>Sam</option></select>
+          </fieldset>
+
+          <fieldset>
+            <legend>Bill splitters</legend>
+            <div class="member-checks">
+              <label class="member-chip"><input type="checkbox" checked /> Maya</label>
+              <label class="member-chip"><input type="checkbox" checked /> Qilin</label>
+              <label class="member-chip"><input type="checkbox" checked /> Leo</label>
+              <label class="member-chip"><input type="checkbox" checked /> Sam</label>
+            </div>
+          </fieldset>
+
+          <label class="field"><span>Notes <small>(optional)</small></span><textarea rows="2">Dinner after our first evening walk.</textarea></label>
+
+          <div class="modal-actions">
+            <a class="text-button" href="#example-bill">Cancel</a>
+            <button class="primary-button" type="button" title="Saving will be added with JavaScript later">Save changes</button>
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>© 2026 Bill Split</span>
+      <span>HTML and CSS layout prototype</span>
+    </footer>
+  </body>
+</html>
